@@ -1,3 +1,57 @@
+# Rare 
+
+Our client, Rare Publishing, needs a new application built for their readers. Currently, readers can submit new articles through the mail and once month Rare sends out a Zine of articles that the publishers liked the most. They've finally decided that the internet is not a fad and want a new way for readers view posts. 
+
+## Target Audience
+
+Readers who read the works from Rare Publishing  
+
+## Purpose
+
+The purpose of this project is to take Rare Publishings interaction with their readers to the next level through the use of technology 
+
+# Getting Started
+
+- Click on the Sign in button to Sign in
+- If the user does not have a profile, they will be directed to the Create User Profile page 
+- On the landing page, you can see all the posts that have been created 
+- To view individual posts, click on view button on post card.
+- To edit potss, click on edit button and change the prepopulated form to your preference.
+- To delete a post, press the delete button, click ok on the pop up to delete, or cancel to not delete.
+- To create a new post, click on the new post button, fill in the form and click create your post button.
+- Property filter enables, searching through property types based on button click.
+- On the profile/account page, users are able to see username, email, and user image.
+
+## Primary Features
+- Rare is a single page application created with React, firebase API and the end points were checked using postman.
+- Users can login.
+- Users are welcomed to the loading page with existing posts and a navbar.
+- Users can also navigate using navbar links. 
+- Users can create a new post by clicking the create new post link on navbar.
+- Users can view, edit and delete post that they created
+- The profile page displays the details of the users profile.
+- Users can logout of the app using the sign out button on navbar.
+
+## Contributions
+
+Team members who contributed to this project: Keaton Law, Krima Patel, Christian Black, and Jessica Morrison 
+
+## Help
+
+Users can get help on this project by leaving a message for team members in the Discussion Section
+
+## Wireframe
+
+https://miro.com/app/board/o9J_kiGCSK4=/
+
+## ERD
+
+https://dbdiagram.io/d/638e7896bae3ed7c4544e8ab
+
+## Roadmap - Future plans for Rare is to add more features including:
+
+TBD
+
 # React/Next.js Django Auth Template
 
 ## Topics
