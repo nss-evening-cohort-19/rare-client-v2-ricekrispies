@@ -3,7 +3,7 @@ import 'firebase/auth';
 import { clientCredentials } from './client';
 
 const checkUser = (uid) => new Promise((resolve, reject) => {
-  console.warn(clientCredentials.databaseURL);
+  console.warn(uid);
   fetch(`${clientCredentials.databaseURL}/checkuser`, {
     method: 'POST',
     body: JSON.stringify({
