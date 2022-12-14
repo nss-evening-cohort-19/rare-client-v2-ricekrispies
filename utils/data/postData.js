@@ -30,6 +30,7 @@ const createPost = (user, post) => new Promise((resolve, reject) => {
     image_url: post.imageUrl,
     content: post.content,
     approved: post.approved,
+    uid: user.uid,
   };
   fetch(`${clientCredentials.databaseURL}/posts`, {
     method: 'POST',

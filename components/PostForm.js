@@ -53,9 +53,9 @@ const PostForm = ({ user, postObj }) => {
           <Form.Label>Title</Form.Label>
           <Form.Control name="title" required value={currentPost.title} onChange={handleChange} />
           <Form.Label>Publication Date</Form.Label>
-          <Form.Control name="publication-date" type="date" required value={currentPost.publicationDate} onChange={handleChange} />
+          <Form.Control name="publicationDate" type="date" required value={currentPost.publicationDate} onChange={handleChange} />
           <Form.Label>Image</Form.Label>
-          <Form.Control name="image-url" required value={currentPost.imageUrl} onChange={handleChange} />
+          <Form.Control name="imageUrl" required value={currentPost.imageUrl} onChange={handleChange} />
           <Form.Label>Post Content</Form.Label>
           <Form.Control name="content" required value={currentPost.content} onChange={handleChange} />
         </Form.Group>

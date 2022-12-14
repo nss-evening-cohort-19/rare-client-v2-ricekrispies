@@ -1,6 +1,8 @@
 import React from 'react';
 import PostForm from '../../components/PostForm';
+import { useAuth } from '../../utils/context/authContext';
 
 export default function AddPost() {
-  return <PostForm />;
+  const { user } = useAuth();
+  return <PostForm user={user} />;
 }
