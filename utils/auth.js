@@ -18,12 +18,13 @@ const checkUser = (uid) => new Promise((resolve, reject) => {
 });
 
 const registerUser = (userInfo, user) => new Promise((resolve, reject) => {
+  const date = new Date(Date.now());
   const userObj = {
     first_name: userInfo.firstName,
     last_name: userInfo.lastName,
     bio: userInfo.bio,
     email: userInfo.email,
-    created_on: new Date(Date.now()).toLocaleString('en-CA'),
+    created_on: new Intl.DateTimeFormat('en-CA').format(date),
     active: userInfo.active,
     is_staff: userInfo.isStaff,
     profile_image_url: userInfo.profileImageUrl,
