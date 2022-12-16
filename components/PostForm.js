@@ -18,7 +18,7 @@ const initialState = {
 
 const PostForm = ({ user, postObj }) => {
   const [currentPost, setCurrentPost] = useState(initialState);
-  const router = useRouter;
+  const router = useRouter();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
