@@ -18,12 +18,11 @@ const initialState = {
 
 // eslint-disable-next-line no-unused-vars
 function RegisterForm({ user, updateUser }) {
-  const [formData, setFormData] = useState(initialState, ...{ uid: user.uid });
+  const [formData, setFormData] = useState(initialState);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.warn(formData);
-    // registerUser(formData).then(() => updateUser(user.uid));
+    registerUser(formData, user).then(() => updateUser(user.uid));
   };
 
   const handleChange = (e) => {
