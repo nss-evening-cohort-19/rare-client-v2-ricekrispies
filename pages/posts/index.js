@@ -14,7 +14,7 @@ function Home() {
   useEffect(() => {
     getPosts(user.uid).then((setPosts));
   }, []);
-  console.warn(posts);
+  // console.warn(posts);
 
   return (
     <>
