@@ -19,7 +19,7 @@ export default function Users() {
         <h1>Rare Publishing Users</h1>
         {rareUsers.map((rareUser) => (
           <section key={`rareUser--${rareUser.id}`} className="rare-user">
-            <RareUserCard id={rareUser.id} first_name={rareUser.first_name} last_name={rareUser.last_name} email={rareUser.email} bio={rareUser.bio} active={rareUser.active} />
+            <RareUserCard id={rareUser.id} firstName={rareUser.first_name} lastName={rareUser.last_name} email={rareUser.email} bio={rareUser.bio} active={rareUser.active} />
           </section>
         ))}
       </article>
