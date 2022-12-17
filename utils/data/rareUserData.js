@@ -7,8 +7,14 @@ const getRareUsers = (uid = '') => new Promise((resolve, reject) => {
       Authorization: uid,
     },
   })
-    .then((response) => response.json())
-    .then(resolve)
+    .then((response) => (response.status === 200 ? response : false))
+    .then((response) => {
+      if (response) {
+        resolve(response.json());
+      } else {
+        throw new Error('403 response from server');
+      }
+    })
     .catch(reject);
 });
 
