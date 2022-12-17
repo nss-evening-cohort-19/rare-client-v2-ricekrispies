@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import RareUserCard from '../../components/RareUserCard';
+import { Button, FormCheck, Table } from 'react-bootstrap';
 import { useAuth } from '../../utils/context/authContext';
 import { getRareUsers } from '../../utils/data/rareUserData';
 
@@ -19,11 +19,34 @@ export default function Users() {
     <>
       <article>
         <h1>Rare Publishing Users</h1>
-        {rareUsers.map((rareUser) => (
-          <section key={`rareUser--${rareUser.id}`} className="rare-user">
-            <RareUserCard id={rareUser.id} firstName={rareUser.first_name} lastName={rareUser.last_name} email={rareUser.email} bio={rareUser.bio} active={rareUser.active} />
-          </section>
-        ))}
+        <Table striped>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Email</th>
+              <th>Bio</th>
+              <th>Active</th>
+              <th>Admin</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rareUsers.map((rareUser) => (
+              <tr id={rareUser.id}>
+                <td>{rareUser.id}</td>
+                <td>{rareUser.first_name}</td>
+                <td>{rareUser.last_name}</td>
+                <td>{rareUser.email}</td>
+                <td>{rareUser.bio}</td>
+                <td><FormCheck checked={rareUser.active} /></td>
+                <td><FormCheck checked={rareUser.is_staff} /></td>
+                <Button>Edit User Status</Button>
+                <Button>View User</Button>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
       </article>
     </>
   );
