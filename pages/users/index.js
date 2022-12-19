@@ -39,10 +39,18 @@ export default function Users() {
                 <td>{rareUser.last_name}</td>
                 <td>{rareUser.email}</td>
                 <td>{rareUser.bio}</td>
-                <td><FormCheck checked={rareUser.active} /></td>
-                <td><FormCheck checked={rareUser.is_staff} /></td>
-                <Button>Edit User Status</Button>
-                <Button>View User</Button>
+                <td>
+                  <FormCheck checked={rareUser.active} readOnly />
+                </td>
+                <td>
+                  <FormCheck checked={rareUser.is_staff} readOnly />
+                </td>
+                <td>
+                  <Button variant="warning">Edit Status</Button>
+                </td>
+                <td>
+                  <Button variant="primary">View User</Button>
+                </td>
               </tr>
             ))}
           </tbody>
