@@ -41,7 +41,7 @@ const createUserChange = (user, userChange) => new Promise((resolve, reject) => 
     .catch((error) => reject(error));
 });
 
-const deletUserChange = (id) => new Promise((resolve, reject) => {
+const deleteUserChange = (id) => new Promise((resolve, reject) => {
   fetch(`${clientCredentials.databaseURL}/userchanges/${id}`, {
     method: 'DELETE',
     headers: { 'Content-Type': 'application/json' },
@@ -54,5 +54,5 @@ export {
   getUserChanges,
   getUserChangeById,
   createUserChange,
-  deletUserChange,
+  deleteUserChange,
 };
