@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { Button, FormCheck, Table } from 'react-bootstrap';
 import { useAuth } from '../../utils/context/authContext';
@@ -5,6 +6,7 @@ import { getRareUsers } from '../../utils/data/rareUserData';
 
 export default function Users() {
   const [rareUsers, setRareUsers] = useState([]);
+  const router = useRouter();
   const { user } = useAuth();
   const getTheRareUsers = () => {
     getRareUsers(user.uid).then((data) => setRareUsers(data));
@@ -16,7 +18,7 @@ export default function Users() {
   }, [user]);
 
   const editUserStatus = (e) => {
-    console.warn(e.target.id);
+    router.push(`/users/changeUser/${e.target.id}`);
   };
 
   return (
@@ -37,7 +39,7 @@ export default function Users() {
           </thead>
           <tbody>
             {rareUsers.map((rareUser) => (
-              <tr id={rareUser.id}>
+              <tr id={`table-row--${rareUser.id}`}>
                 <td>{rareUser.id}</td>
                 <td>{rareUser.first_name}</td>
                 <td>{rareUser.last_name}</td>
@@ -50,7 +52,7 @@ export default function Users() {
                   <FormCheck checked={rareUser.is_staff} readOnly />
                 </td>
                 <td>
-                  <Button variant="warning" id={`edit--${rareUser.id}`} onClick={editUserStatus}>Edit Status</Button>
+                  <Button variant="warning" id={`${rareUser.id}`} onClick={editUserStatus}>Edit Status</Button>
                 </td>
                 <td>
                   <Button variant="primary">View User</Button>
