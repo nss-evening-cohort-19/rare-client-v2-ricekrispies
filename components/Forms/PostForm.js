@@ -5,7 +5,7 @@ import React, {
 import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
 import { Button, Form } from 'react-bootstrap';
-import { updatePost, createPost } from '../utils/data/postData';
+import { createPost, updatePost } from '../../utils/data/postData';
 
 const initialState = {
   id: null,

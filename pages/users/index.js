@@ -15,6 +15,10 @@ export default function Users() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
+  const editUserStatus = (e) => {
+    console.warn(e.target.id);
+  };
+
   return (
     <>
       <article>
@@ -46,7 +50,7 @@ export default function Users() {
                   <FormCheck checked={rareUser.is_staff} readOnly />
                 </td>
                 <td>
-                  <Button variant="warning">Edit Status</Button>
+                  <Button variant="warning" id={`edit--${rareUser.id}`} onClick={editUserStatus}>Edit Status</Button>
                 </td>
                 <td>
                   <Button variant="primary">View User</Button>
