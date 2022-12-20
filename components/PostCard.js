@@ -22,6 +22,9 @@ export default function PostCard({
           <Card.Title>{title}</Card.Title>
           <Card.Text>{content}</Card.Text>
           <Card.Text>{publicationDate}</Card.Text>
+          <Link href={`/posts/${id}`} passHref>
+            <Button variant="primary" className="m-2">VIEW</Button>
+          </Link>
           <Link href={`/posts/edit/${id}`} passHref>
             <Button variant="info">EDIT</Button>
           </Link>
