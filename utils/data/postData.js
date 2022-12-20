@@ -1,7 +1,12 @@
 import { clientCredentials } from '../client';
 
-const getPosts = () => new Promise((resolve, reject) => {
-  fetch(`${clientCredentials.databaseURL}/posts`)
+const getPosts = (uid = '') => new Promise((resolve, reject) => {
+  fetch(`${clientCredentials.databaseURL}/posts`, {
+    method: 'GET',
+    headers: {
+      Authorization: uid,
+    },
+  })
     .then((response) => response.json())
     .then(resolve)
     .catch(reject);
@@ -72,10 +77,21 @@ const deletePost = (id) => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
+const approvedChange = (id, uid) => new Promise((resolve, reject) => {
+  fetch(`${clientCredentials.databaseURL}/posts/${id}/change_approved`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json', 
+      Authorization: 'uid', },
+  })
+    .then((response) => resolve(response))
+    .catch((error) => reject(error));
+})
+
 export {
   getPosts,
   createPost,
   updatePost,
   getPostById,
   deletePost,
+  approvedChange,
 };
