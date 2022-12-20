@@ -7,9 +7,10 @@ import {
   Nav,
   Button,
 } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 import { signOut } from '../utils/auth';
 
-export default function NavBar() {
+export default function NavBar({ userStaff }) {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
@@ -25,10 +26,13 @@ export default function NavBar() {
             </Link>
             <Link passHref href="/posts">
               <Nav.Link>All Posts</Nav.Link>
-            </Link>
-            <Link passHref href="/users">
-              <Nav.Link>All Users</Nav.Link>
-            </Link>
+            </Link> {
+              userStaff ? (
+                <Link passHref href="/users">
+                  <Nav.Link>All Users</Nav.Link>
+                </Link>
+              ) : <></>
+            }
             <Link passHref href="/posts/new">
               <Nav.Link>Submit Post</Nav.Link>
             </Link>
@@ -41,3 +45,7 @@ export default function NavBar() {
     </Navbar>
   );
 }
+
+NavBar.propTypes = {
+  userStaff: PropTypes.bool.isRequired,
+};

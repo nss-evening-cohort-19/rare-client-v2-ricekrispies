@@ -5,7 +5,6 @@ import PostCard from '../../components/PostCard';
 
 export default function ViewPost() {
   const [viewPosts, setViewPost] = useState([]);
-  console.warn(viewPosts);
   const router = useRouter();
   const { id } = router.query;
 
