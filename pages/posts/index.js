@@ -32,7 +32,7 @@ function Home() {
               id={post.id}
               title={post.title}
               publicationDate={post.publication_date}
-              imageUrl={post.imageUrl}
+              imageUrl={post.image_url}
               content={post.content}
               approved={post.approved}
               onUpdate={getPosts}
