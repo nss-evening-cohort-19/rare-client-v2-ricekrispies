@@ -13,7 +13,6 @@ const initialState = {
   publicationDate: '',
   imageUrl: '',
   content: '',
-  approved: false,
 };
 
 const PostForm = ({ user, postObj }) => {
