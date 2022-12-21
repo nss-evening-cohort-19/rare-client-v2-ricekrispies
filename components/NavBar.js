@@ -28,9 +28,14 @@ export default function NavBar({ userStaff }) {
               <Nav.Link>All Posts</Nav.Link>
             </Link> {
               userStaff ? (
-                <Link passHref href="/users">
-                  <Nav.Link>All Users</Nav.Link>
-                </Link>
+                <>
+                  <Link passHref href="/users">
+                    <Nav.Link>All Users</Nav.Link>
+                  </Link>
+                  <Link passHref href="/posts/postApproval">
+                    <Nav.Link>Post Approvals</Nav.Link>
+                  </Link>
+                </>
               ) : <></>
             }
             <Link passHref href="/posts/new">
