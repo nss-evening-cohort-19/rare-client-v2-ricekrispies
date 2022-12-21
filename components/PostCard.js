@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { deletePost } from '../utils/data/postData';
 
 export default function PostCard({
-  title, content, publicationDate, id, onUpdate,
+  title, content, publicationDate, id, onUpdate, imageUrl,
 }) {
   const deleteThisPost = () => {
     if (window.confirm(`Delete ${title}?`)) {
@@ -21,6 +21,7 @@ export default function PostCard({
         <Card.Body>
           <Card.Title>{title}</Card.Title>
           <Card.Text>{content}</Card.Text>
+          <Card.Img variant="top" src={imageUrl} alt={title} style={{ height: '400px' }} />
           <Card.Text>{publicationDate}</Card.Text>
           <Link href={`/posts/${id}`} passHref>
             <Button variant="primary" className="m-2">VIEW</Button>
@@ -41,6 +42,7 @@ export default function PostCard({
 PostCard.propTypes = {
   id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
+  imageUrl: PropTypes.string.isRequired,
   publicationDate: PropTypes.number.isRequired,
   content: PropTypes.string.isRequired,
   // approved: PropTypes.bool,
