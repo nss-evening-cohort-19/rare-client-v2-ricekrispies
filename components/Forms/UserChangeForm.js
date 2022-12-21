@@ -17,11 +17,20 @@ const initialState = {
 export default function UserChangeForm({
   id, firstName, lastName, bio, email, isStaff, createdOn, active,
 }) {
+  // eslint-disable-next-line no-unused-vars
+  const [initialFormData, setInitialFormData] = useState(initialState);
   const [formData, setFormData] = useState(initialState);
 
+  console.warn(id);
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.warn(id);
+    if (initialFormData.active !== formData.active && initialFormData.isStaff !== formData.isStaff) {
+      console.warn('Admin access and active change');
+    } else if (initialFormData.isStaff !== formData.isStaff) {
+      console.warn('Admin access change');
+    } else if (initialFormData.active !== formData.active) {
+      console.warn('Active change');
+    }
   };
 
   return (
