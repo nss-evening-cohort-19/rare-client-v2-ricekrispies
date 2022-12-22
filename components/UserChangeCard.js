@@ -1,12 +1,12 @@
 /* eslint-disable camelcase */
 import React from 'react';
+import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import { Card } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import { useAuth } from '../utils/context/authContext';
 import { deleteUserChange } from '../utils/data/userChangeData';
 import { userActiveChange, userStaffChange } from '../utils/data/rareUserData';
-import { useRouter } from 'next/router';
 
 export default function UserChangeCard({
   id, action, modified_userLN, modified_userFN, modified_userID, admin, onUpdate,
