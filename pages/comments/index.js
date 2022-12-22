@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { Button } from 'react-bootstrap';
 import CommentCard from '../../components/CommentCard';
-import { getCommentsByPost } from '../../utils/data/commentData';
+import { getComments } from '../../utils/data/commentData';
 
 function Home() {
   const [comments, setComments] = useState([]);
   const router = useRouter();
 
   useEffect(() => {
-    getCommentsByPost(comments.post).then((setComments));
+    getComments().then((setComments));
   }, []);
 
   return (
@@ -30,7 +30,7 @@ function Home() {
               user={comment.user.email}
               createdOn={comment.created_on}
               content={comment.content}
-              onUpdate={getCommentsByPost}
+              onUpdate={getComments}
             />
           </section>
         ))}
