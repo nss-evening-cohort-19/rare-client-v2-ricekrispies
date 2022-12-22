@@ -20,3 +20,11 @@ a {
 body {
   background-color: #88effd;
 }
+
+.text-center {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 5%;
+  justify-content: center;
+}
