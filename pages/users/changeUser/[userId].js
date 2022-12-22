@@ -20,6 +20,6 @@ export default function UserChangePage() {
   }, [userId]);
 
   return (
-    <UserChangeForm id={editUser.id} firstName={editUser.first_name} lastName={editUser.last_name} bio={editUser.bio} email={editUser.email} active={editUser.active} createdOn={editUser.created_on} isStaff={editUser.is_staff} />
+    <UserChangeForm obj={editUser} user={user} />
   );
 }
