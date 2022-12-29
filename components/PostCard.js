@@ -17,11 +17,11 @@ export default function PostCard({
   return (
 
     <>
-      <Card className="text-center">
+      <Card className="text-center" style={{ width: '25rem' }}>
         <Card.Body>
           <Card.Title>{title}</Card.Title>
           <Card.Text>{content}</Card.Text>
-          <Card.Img variant="top" src={imageUrl} alt={title} style={{ height: '400px' }} />
+          <Card.Img variant="top" src={imageUrl} alt={title} style={{ height: '200px' }} />
           <Card.Text>{publicationDate}</Card.Text>
           <Link href={`/posts/${id}`} passHref>
             <Button variant="primary" className="m-2">VIEW</Button>
