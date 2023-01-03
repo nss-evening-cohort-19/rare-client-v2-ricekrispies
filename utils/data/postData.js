@@ -80,18 +80,12 @@ const deletePost = (id) => new Promise((resolve, reject) => {
 const approvedChange = (id, uid) => new Promise((resolve, reject) => {
   fetch(`${clientCredentials.databaseURL}/posts/${id}/change_approved`, {
     method: 'PUT',
-    headers: { 'Content-Type': 'application/json', 
-      Authorization: 'uid', },
+    headers: { 'Content-Type': 'application/json', Authorization: uid },
   })
     .then((response) => resolve(response))
     .catch((error) => reject(error));
-})
+});
 
 export {
-  getPosts,
-  createPost,
-  updatePost,
-  getPostById,
-  deletePost,
-  approvedChange,
+  getPosts, createPost, updatePost, getPostById, deletePost, approvedChange,
 };

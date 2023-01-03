@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { getPostById } from '../../../utils/data/postData';
-import PostForm from '../../../components/PostForm';
+import PostForm from '../../../components/Forms/PostForm';
 
 export default function EditPost() {
   const [editPost, setEditPost] = useState({});

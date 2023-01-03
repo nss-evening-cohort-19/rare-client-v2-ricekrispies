@@ -1,5 +1,5 @@
 import React from 'react';
-import PostForm from '../../components/PostForm';
+import PostForm from '../../components/Forms/PostForm';
 import { useAuth } from '../../utils/context/authContext';
 
 export default function NewPost() {
