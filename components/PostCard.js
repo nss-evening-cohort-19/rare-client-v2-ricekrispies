@@ -45,6 +45,5 @@ PostCard.propTypes = {
   imageUrl: PropTypes.string.isRequired,
   publicationDate: PropTypes.number.isRequired,
   content: PropTypes.string.isRequired,
-  // approved: PropTypes.bool,
   onUpdate: PropTypes.func.isRequired,
 };
