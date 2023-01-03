@@ -1,14 +1,19 @@
 import { clientCredentials } from '../client';
 
-const getUserChanges = () => new Promise((resolve, reject) => {
-  fetch(`${clientCredentials.databaseURL}/userchanges`)
+const getUserChanges = (uid = '') => new Promise((resolve, reject) => {
+  fetch(`${clientCredentials.databaseURL}/userchange`, {
+    method: 'GET',
+    headers: {
+      Authorization: uid,
+    },
+  })
     .then((response) => response.json())
     .then(resolve)
     .catch(reject);
 });
 
 const getUserChangeById = (id) => new Promise((resolve, reject) => {
-  fetch(`${clientCredentials.databaseURL}/userchanges/${id}`)
+  fetch(`${clientCredentials.databaseURL}/userchange/${id}`)
     .then((response) => response.json())
     .then((data) => {
       resolve({
@@ -29,7 +34,7 @@ const createUserChange = (user, userChange) => new Promise((resolve, reject) => 
     second_admin: null,
     modified_user: userChange.modifiedUser,
   };
-  fetch(`${clientCredentials.databaseURL}/userchanges`, {
+  fetch(`${clientCredentials.databaseURL}/userchange`, {
     method: 'POST',
     body: JSON.stringify(userChangeObj),
     headers: {
@@ -42,7 +47,7 @@ const createUserChange = (user, userChange) => new Promise((resolve, reject) => 
 });
 
 const deleteUserChange = (id) => new Promise((resolve, reject) => {
-  fetch(`${clientCredentials.databaseURL}/userchanges/${id}`, {
+  fetch(`${clientCredentials.databaseURL}/userchange/${id}`, {
     method: 'DELETE',
     headers: { 'Content-Type': 'application/json' },
   })
