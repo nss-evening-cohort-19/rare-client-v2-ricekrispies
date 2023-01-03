@@ -51,7 +51,7 @@ export default function UserChangeForm({
   }, [user, obj]);
   const handleSubmit = (e) => {
     e.preventDefault();
-    createUserChange(userChangeData, user.uid, obj.id).then(() => router.push('/users'));
+    createUserChange(userChangeData, user.uid, obj.id).then(() => router.push('/userchange'));
   };
 
   return (
