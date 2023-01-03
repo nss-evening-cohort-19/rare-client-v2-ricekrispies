@@ -29,6 +29,9 @@ export default function PostCard({
           <Link href={`/posts/edit/${id}`} passHref>
             <Button variant="info">EDIT</Button>
           </Link>
+          <Link href={`/comments/${id}`} passHref>
+            <Button variant="info">Comments</Button>
+          </Link>
           <Button variant="danger" onClick={deleteThisPost} className="m-2">
             DELETE
           </Button>

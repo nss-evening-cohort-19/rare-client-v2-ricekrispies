@@ -26,8 +26,8 @@ const userStaffChange = (id, uid) => new Promise((resolve, reject) => {
       'Content-Type': 'application/json',
     },
   })
-  .then((response) => resolve(response))
-  .catch((error) => reject(error));
+    .then((response) => resolve(response))
+    .catch((error) => reject(error));
 });
 
 const userActiveChange = (id, uid) => new Promise((resolve, reject) => {
@@ -38,8 +38,8 @@ const userActiveChange = (id, uid) => new Promise((resolve, reject) => {
       'Content-Type': 'application/json',
     },
   })
-  .then((response) => resolve(response))
-  .catch((error) => reject(error));
+    .then((response) => resolve(response))
+    .catch((error) => reject(error));
 });
 
 // eslint-disable-next-line import/prefer-default-export
